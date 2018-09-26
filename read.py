@@ -21,11 +21,15 @@ def read_version(path):
 
 
 def pretty_print(container):
+    print()
     max_key_number = len(max(container.keys(), key=lambda x: len(x))) + 2
     for k, v in container.items():
         k = k.ljust(max_key_number, ' ')
         print(k, end="")
         print(v)
+
+    print()
+    print(f"kext_number: {len(container)}")
 
 
 if __name__ == "__main__":
