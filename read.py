@@ -2,7 +2,7 @@ import pathlib
 from xml.dom import minidom
 
 dp = pathlib.Path()
-for f in dp.iterdir():
+for f in sorted(list(dp.iterdir())):
     if f.match("*.kext"):
         if not f.is_dir():
             continue
