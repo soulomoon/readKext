@@ -18,7 +18,7 @@ if __name__ == "__main__":
                 if not content.is_dir():
                     continue
                 for info in content.iterdir():
-                    if info.match("*.plist"):
+                    if info.match("Info.plist"):
                         try:
                             with info.open() as fp:
                                 doc = minidom.parse(fp)
@@ -30,4 +30,4 @@ if __name__ == "__main__":
                                 pairs = dict(zip(keys, vals))
                                 print(pairs["CFBundleShortVersionString"])
                         except:
-                            pass
+                            print("some error happen")
