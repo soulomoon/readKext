@@ -13,8 +13,7 @@ if __name__ == "__main__":
             if not f.is_dir():
                 continue
             print(f.name)
-            with open(str(f) + "/Contents/Info.plist") as fp:
-                doc = minidom.parse(fp)
+            with minidom.parse(str(f) + "/Contents/Info.plist") as doc:
                 items = doc.getElementsByTagName('dict')
                 d = items[0]
                 keys = [i.firstChild.data for i in d.getElementsByTagName("key")]
